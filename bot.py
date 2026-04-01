@@ -4,10 +4,10 @@ import main_script
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 
-BOT_TOKEN = os.getenv("8749753107:AAEmDaLMTq0oDOYNdEZ-CLF2h9hMBOIMS3I")
+BOT_TOKEN = os.getenv("BOT_TOKEN")
 
 if not BOT_TOKEN:
-    raise ValueError("TELEGRAM_BOT_TOKEN environment variable is not set.")
+    raise ValueError("BOT_TOKEN environment variable is not set.")
 
 running_task = None
 
