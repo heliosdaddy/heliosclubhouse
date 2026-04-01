@@ -55,4 +55,15 @@ app.add_handler(CommandHandler("stop", stop))
 app.add_handler(CommandHandler("status", status))
 
 print("🤖 Telegram Bot Running...")
-app.run_polling(drop_pending_updates=True)
+import asyncio
+
+async def main():
+    await app.initialize()
+    await app.start()
+    await app.bot.delete_webhook(drop_pending_updates=True)
+    await app.updater.start_polling()
+    await asyncio.Event().wait()
+
+if __name__ == "__main__":
+    asyncio.run(main())
+app.run_polling(drop_pending_updates=True, close_loop=False)
