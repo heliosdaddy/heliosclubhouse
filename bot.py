@@ -55,4 +55,4 @@ app.add_handler(CommandHandler("stop", stop))
 app.add_handler(CommandHandler("status", status))
 
 print("🤖 Telegram Bot Running...")
-app.run_polling()
+app.run_polling(drop_pending_updates=True)
